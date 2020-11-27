@@ -16,32 +16,21 @@ class TOONTANKS_API ABasePawn : public APawn
 private:
 
 // capsule component needs to be forward declared so as to minimize #includes and increase runtime
-UPROPERTY()
+UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 UCapsuleComponent* CapsuleComp;
 
 // UStaticMeshComponent is used to create an instance of a UStaticMesh which is an object composed
 // of static polygons
-UPROPERTY()
+UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 UStaticMeshComponent* BaseMesh;
-UPROPERTY()
+UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 UStaticMeshComponent* TurretMesh;
 
 // useful for defining where the projectile will spawn :)
-UPROPERTY()
+UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 USceneComponent* ProjectileSpawnPoint;
 
 public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 };
