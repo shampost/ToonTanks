@@ -24,7 +24,9 @@ private:
 	FVector MoveDirection;
 	FQuat RotationDirection;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true")) // note that you HAVE to allowprivateaccess when using BPRW
 	float MovementSpeed = 200.0f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float RotationSpeed = 100.0f;
 
 	void CalculateMoveInput(float Value);
